@@ -44,7 +44,6 @@ which kustomize
 
 Save this text in a file called kustomization.yaml in the root of your home folder 
 
-###
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization 
 resources: 
@@ -55,13 +54,11 @@ images:
     newTag: 0.28.0
 
 namespace: awx 
-###
 
 Build Kuberneties 
 kustomize build . | kubectl apply -f -
 
 Create one more file called awx.yml
-###
 ---
 
   apiVersion: awx.ansible.com/v1beta1
@@ -71,11 +68,9 @@ Create one more file called awx.yml
   spec: 
     service_type: nodeport
     nodeport_port: 30080
-###
 
 Update kustomization.yml - to add resource awx.yml
 
-###
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization 
 resources: 
@@ -87,7 +82,6 @@ images:
     newTag: 0.28.0
 
 namespace: awx 
-###
 
 Rebuild 
 kustomize build . | kubectl apply -f -
@@ -101,24 +95,6 @@ Log into AWX with admin / <copied password>
   
 Then you can go into users and change the admin password. 
   
- 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ansible AWX default login is 
+Ansible AWX default login is admin with the password you get from the above code for Get Password. 
