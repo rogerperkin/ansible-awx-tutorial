@@ -9,6 +9,7 @@ Update Ubuntu
 sudo apt update && sudo apt upgrade -y 
 
 Install net-tools and OpenSSH & Vmware Tools so I can copy / paste commands curl and git 
+
 sudo apt-get install net-tools
 
 sudo apt-get install openssh-server
